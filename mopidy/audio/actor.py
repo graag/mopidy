@@ -331,6 +331,7 @@ class _Handler:
 
         # TODO: is this needed?
         self._audio.stop_playback()
+        self.on_end_of_stream()
 
     def on_warning(self, error, debug):
         gst_logger.warning(f"GStreamer warning: {error.message}")
