@@ -338,6 +338,9 @@ class _Handler:
         gst_logger.debug(
             f"Got WARNING bus message: error={error!r} debug={debug!r}"
         )
+        # TODO: is this needed?
+        self._audio.stop_playback()
+        self.on_end_of_stream()
 
     def on_async_done(self):
         gst_logger.debug("Got ASYNC_DONE bus message.")
